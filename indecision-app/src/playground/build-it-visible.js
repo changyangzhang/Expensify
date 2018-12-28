@@ -1,58 +1,33 @@
-class Visible extends React.Component {
-    constructor(props) {
-        super(props);
-        this.hideOrShow = this.hideOrShow.bind(this);
-        this.state = {
-            show : false
-        };
-    }
-    hideOrShow() {
-        this.setState((prevState) => {
-            return {
-                show : !prevState.show
-            };
-        });
-    }
-    render() {
-        return (
-            <div>
-            <h1>Title</h1>
-                         <button onClick = {this.hideOrShow}> {this.state.show ? 'Hide' : 'Show'} </button>
-                        {this.state.show && (
-                            <div><p> Some Details</p></div>)}
-            </div>);
-    }
+class VisibilityToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
+    this.state = {
+      visibility: false
+    };
+  }
+  handleToggleVisibility() {
+    this.setState((prevState) => {
+      return {
+        visibility: !prevState.visibility
+      };
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h1>Visibility Toggle</h1>
+        <button onClick={this.handleToggleVisibility}>
+          {this.state.visibility ? 'Hide details' : 'Show details'}
+        </button>
+        {this.state.visibility && (
+          <div>
+            <p>Hey. These are some details you can now see!</p>
+          </div>
+        )}
+      </div>
+    );
+  }
 }
 
-
-
-ReactDOM.render(<Visible/>, document.getElementById('app'));
-// const appRoot = document.getElementById('app');
-// const app = {
-//     title: 'Visibility Toggle',
-//     detail: 'some details',
-//     show: false
-// };
-//
-// const reSet = () => {
-//     app.show = !app.show;
-//     appRender();
-// }
-//
-// const appRender = () => {
-//     const template = (
-//         <div>
-//             <h1>{app.title}</h1>
-//             <button onClick = {reSet}> {app.show ? 'Hide' : 'Show'} </button>
-//             {app.show && (
-//                 <div>
-//                     <p> Some Details</p>
-//                 </div>
-//             )}
-//         </div>
-//     );
-//
-//     ReactDOM.render(template, appRoot)
-// }
-//
-// appRender();
+ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
