@@ -1,4 +1,6 @@
 indecision-app/node_modules
+
+expensify-app/node_modules
 indecision-app/public/scripts/app.js
 *.xml
 *.iml
