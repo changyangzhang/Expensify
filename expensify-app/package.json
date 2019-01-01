@@ -2,7 +2,7 @@
   "name": "expensify",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Changyang",
+  "author": "Changyang Zhang",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
