@@ -8,3 +8,4 @@ expensify-app/public/styles.css.map
 indecision-app/public/scripts/app.js
 *.xml
 *.iml
+expensify-app/.DS_Store
