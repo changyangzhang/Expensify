@@ -1,7 +1,6 @@
 import React from "react";
-import { SingleDatePicker} from "react-dates";
+import { SingleDatePicker } from "react-dates";
 import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css'
 import moment from "moment";
 
 export default class ExpenseForm extends React.Component{
