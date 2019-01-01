@@ -2,17 +2,17 @@ import expensesReducer from '../../reducers/expenses';
 import expenses from '../fixtures/expenses';
 
 test('should set default state', () =>{
-    const state = expensesReducer(undefined, {type:'@@INIT'})
+    const state = expensesReducer(undefined, {type:'@@INIT'});
     expect(state).toEqual([]);
 });
 
 test('should remove expense by id', () =>{
-    const state = expensesReducer(expenses, {type:'REMOVE_EXPENSE', id: expenses[1].id})
+    const state = expensesReducer(expenses, {type:'REMOVE_EXPENSE', id: expenses[1].id});
     expect(state).toEqual([expenses[0], expenses[2]]);
 });
 
 test('should not remove expense by id', () =>{
-    const state = expensesReducer(expenses, {type:'REMOVE_EXPENSE', id: '456'})
+    const state = expensesReducer(expenses, {type:'REMOVE_EXPENSE', id: '456'});
     expect(state).toEqual([expenses[0], expenses[1],expenses[2]]);
 });
 

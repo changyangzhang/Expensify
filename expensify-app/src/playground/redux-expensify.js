@@ -83,7 +83,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
           };
         } else {
           return expense;
-        };
+        }
       });
     default:
       return state;
