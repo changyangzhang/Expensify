@@ -9,3 +9,4 @@ indecision-app/public/scripts/app.js
 *.xml
 *.iml
 expensify-app/.DS_Store
+expensify-app/public/.DS_Store
