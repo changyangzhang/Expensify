@@ -2,15 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import numeral from 'numeral';
 import selectExpenses from '../selectors/expenses';
-import slectExpensesTotal from '../selectors/expenses-total'
+import selectExpensesTotal from '../selectors/expenses-total'
+import {Link} from "react-router-dom";
 
 export const ExpensesSummary = ({expenseCount, expensesTotal}) =>{
     const expenseWord = expenseCount === 1 ? 'expense': 'expenses';
     const formattedExpensesTotal = numeral(expensesTotal/100).format('0,0.00') + ' kr';
     return (
-        <div>
-            <h1> Viewing {expenseCount} {expenseWord} totalling {formattedExpensesTotal}</h1>
-        </div>
+        <div className="page-header">
+            <div className="content-container">
+                <h1 className="page-header__title"> Viewing <span>{expenseCount}</span> {expenseWord} totalling <span> {formattedExpensesTotal} </span></h1>
+                <div className="page-header__actions">
+                    <Link className="button" to="/create">Add Expense</Link>
+                </div>
+            </div>
+       </div>
     );
 };
 
@@ -19,7 +25,7 @@ const mapStateToProps = (state) =>{
 
     return{
         expenseCount: visibleExpenses.length,
-        expensesTotal: slectExpensesTotal(visibleExpenses)
+        expensesTotal: selectExpensesTotal(visibleExpenses)
     }
 };
 
