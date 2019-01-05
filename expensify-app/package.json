@@ -4,6 +4,11 @@
   "main": "index.js",
   "author": "Changyang Zhang",
   "license": "MIT",
+  "engines": {
+    "node": "11.4.0",
+    "npm": "6.4.1",
+    "yarn": "1.12.3"
+  },
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
@@ -49,6 +54,7 @@
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "jest": "^23.6.0",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.7.1",

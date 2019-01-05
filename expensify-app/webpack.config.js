@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+let CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -46,6 +47,7 @@ module.exports = (env) => {
       }]
     },
     plugins: [
+      new CaseSensitivePathsPlugin(),
       CSSExtract,
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
